@@ -8,6 +8,7 @@
 #include "MyButton.h"
 #include "MyLabel.h"
 #include "MyContainer.h"
+#include "MyCheckBox.h"
 
 using namespace std;
 
@@ -25,8 +26,11 @@ int _tmain(int argc, char** argv)
 
 	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
 
+	MyCheckBox* checkbox = new MyCheckBox(200, 100, "Test checkbox", Color());
+
 	container->Add(button);
 	container->Add(label);
+	container->Add(checkbox);
 
 
 	//InitOGL(argc, argv, button);
@@ -35,6 +39,7 @@ int _tmain(int argc, char** argv)
 
     delete button;
 	delete label;
+	delete checkbox;
 	delete container;
 
 	return 0;

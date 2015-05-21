@@ -6,9 +6,7 @@
 
 
 MyLabel::MyLabel()
-	:ControlUI(400, 300, 0, 0, Color())
 {
-	text = "N/A";
 }
 
 MyLabel::MyLabel(int posX, int posY, string content)

@@ -35,9 +35,9 @@ void MyCheckBox::OnMouseDown(int button, int x, int y)
 	if (x > X && x < X + Width && y>Y && y < Y + Height && button == MOUSE_LEFT)
 	{
 		if (checked)
-			checked == false;
+			checked = false;
 		else
-			checked == true;
+			checked = true;
 	}
 }
 

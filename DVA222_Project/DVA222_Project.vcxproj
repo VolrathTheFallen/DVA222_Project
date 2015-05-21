@@ -84,12 +84,13 @@
     <ClInclude Include="MyCheckBox.h" />
     <ClInclude Include="MyCheckBoxGroup.h" />
     <ClInclude Include="MyContainer.h" />
-    <ClInclude Include="MyImageButton.h" />
+    <ClInclude Include="MyImageBox.h" />
     <ClInclude Include="MyLabel.h" />
     <ClInclude Include="MyPanel.h" />
     <ClInclude Include="MyRadioButton.h" />
     <ClInclude Include="MyRadioButtonGroup.h" />
     <ClInclude Include="MyWindow.h" />
+    <ClInclude Include="resource3.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -102,7 +103,7 @@
     <ClCompile Include="MyCheckBox.cpp" />
     <ClCompile Include="MyCheckBoxGroup.cpp" />
     <ClCompile Include="MyContainer.cpp" />
-    <ClCompile Include="MyImageButton.cpp" />
+    <ClCompile Include="MyImageBox.cpp" />
     <ClCompile Include="MyLabel.cpp" />
     <ClCompile Include="MyPanel.cpp" />
     <ClCompile Include="MyRadioButton.cpp" />
@@ -112,6 +113,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DVA222_Project2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

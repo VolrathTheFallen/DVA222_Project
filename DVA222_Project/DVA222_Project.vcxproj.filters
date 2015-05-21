@@ -42,9 +42,6 @@
     <ClInclude Include="MyRadioButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyImageButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MyContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -61,6 +58,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ControlUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyImageBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,9 +92,6 @@
     <ClCompile Include="MyRadioButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyImageButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MyContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -110,5 +110,13 @@
     <ClCompile Include="ControlUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyImageBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DVA222_Project2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

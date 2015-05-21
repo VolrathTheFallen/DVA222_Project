@@ -6,6 +6,7 @@
 #include "Graphix.h"
 #include "glut.h"
 #include "MyButton.h"
+#include "MyImageBox.h"
 #include "MyLabel.h"
 #include "MyContainer.h"
 #include "MyCheckBox.h"
@@ -22,6 +23,8 @@ int _tmain(int argc, char** argv)
     
 	ControlBase* button = new MyButton(20,20,190,60, Color());
 
+	ControlBase* image = new MyImageBox(500, 500, 100, 100);
+
 	ControlBase* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
 	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
@@ -30,6 +33,7 @@ int _tmain(int argc, char** argv)
 
 	container->Add(button);
 	container->Add(label);
+	container->Add(image);
 	container->Add(checkbox);
 
 

@@ -10,7 +10,7 @@ MyContainer::MyContainer()
 MyContainer::MyContainer(int posX, int posY, int width, int height, Color c)
 	:ControlUI(posX, posY, width, height, c)
 {
-	relativePos = Point(0, 0);
+
 }
 
 MyContainer::~MyContainer()

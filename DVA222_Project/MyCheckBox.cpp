@@ -14,8 +14,6 @@ MyCheckBox::MyCheckBox()
 	label = new MyLabel();
 
 	checked = false;
-
-	relativePos = Point(0, 0);
 }
 
 MyCheckBox::MyCheckBox(int posX, int posY, string content, Color c)
@@ -24,8 +22,6 @@ MyCheckBox::MyCheckBox(int posX, int posY, string content, Color c)
 	label = new MyLabel(X + Width + 3, Y + Height, content, c); //posX + width of checkbox and padding. Assuming horizontal orientation
 
 	checked = false;
-
-	relativePos = Point(0, 0);
 }
 
 MyCheckBox::~MyCheckBox()
@@ -36,7 +32,7 @@ MyCheckBox::~MyCheckBox()
 void MyCheckBox::OnMouseDown(int button, int x, int y)
 {
 
-	if (x > X + relativePos.X && x < X + Width + relativePos.X && y>Y + relativePos.Y && y < Y + Height + relativePos.Y && button == MOUSE_LEFT)
+	if (x > X + relativePos.X && x < X + relativePos.X + Width  && y>Y + relativePos.Y && y < Y + relativePos.Y + Height  && button == MOUSE_LEFT)
 	{
 		if (checked)
 			checked = false;
@@ -52,13 +48,14 @@ void MyCheckBox::OnPaint()
 
 	if (checked)
 	{
-		DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width + relativePos.X, Height + relativePos.Y);
-		FillRectangle(X + 2 + relativePos.X, Y + 3 + relativePos.Y, Width - 5 + relativePos.X, Height - 5 + relativePos.Y);
+		DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
+		FillRectangle(X + 2.5 + relativePos.X, Y + 2.5 + relativePos.Y, Width - 5, Height -5);
 	}
 	else
 	{
-		DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width + relativePos.X, Height + relativePos.Y);
+		DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
 	}
 
+	label->SetRelativePos(this->GetRelativePos());
 	label->OnPaint();
 }

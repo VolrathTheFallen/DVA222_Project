@@ -26,34 +26,34 @@ int _tmain(int argc, char** argv)
     
 	//MyWindow* window = new ...
 
-	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
+	//MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
 
-	ControlUI* button = new MyButton(10,10,150,60, Color());
-	ControlUI* image = new MyImageBox(500, 500, 100, 100);
-	ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
+	//ControlUI* button = new MyButton(10,10,150,60, Color());
+	//ControlUI* image = new MyImageBox(500, 500, 100, 100);
+	//ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
-	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(10, 300, 100, 100, Color(255, 255, 255));
-	checkBoxGroup->Add(new MyCheckBox(10,100, "CheckBoxTest 1", Color()));
-	checkBoxGroup->Add(new MyCheckBox(10, 120, "CheckBoxTest 2", Color()));
-	MyCheckBox* checkBox = new MyCheckBox(10, 140, "CheckBoxTest 3", Color());
+	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(150, 150, 300, 300, Color(255, 255, 255));
+	checkBoxGroup->Add(new MyCheckBox(10, 10, "CheckBoxTest 1", Color()));
+	checkBoxGroup->Add(new MyCheckBox(10, 30, "CheckBoxTest 2", Color()));
+	MyCheckBox* checkBox = new MyCheckBox(10, 50, "CheckBoxTest 3", Color());
 	checkBoxGroup->Add(checkBox);
 
 	//MyRadioButtonGroup* radioButtonGroup = new...
 	//radioButtonGroup->Add(...
 	//MyRadioButtonGroup* radioButton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150)); // delete this after?
 
-	container->Add(button);
+	/*container->Add(button);
 	container->Add(image);
 	container->Add(label);
-	container->Add(checkBoxGroup);
+	container->Add(checkBoxGroup);*/
 //	container->Add(radioButton);
 
 
-	InitOGL(argc, argv, (ControlBase*) container);
+	InitOGL(argc, argv, (ControlBase*) checkBoxGroup);
 
-    delete button;
+    /*delete button;
 	delete label;
-	delete container;
+	delete container;*/
 
 	return 0;
 }

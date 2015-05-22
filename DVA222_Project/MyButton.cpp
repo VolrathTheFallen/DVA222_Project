@@ -11,12 +11,14 @@ using namespace std;
 MyButton::MyButton()
 {
     hit = pressed = false;
+	relativePos = Point(0, 0);
 }
 
 MyButton::MyButton(int locX, int locY, int width, int height, Color c)
     : ControlUI(locX, locY, width, height, c)
 {
     hit = pressed = false;
+	relativePos = Point(0, 0);
 }
 
 MyButton::~MyButton()
@@ -29,7 +31,7 @@ MyButton::~MyButton()
 //This is called whenever the user moves the mouse around
 void MyButton::OnMouseMove(int button, int x, int y)
 {
-	if (x>X && x < X+Width && y>Y && y < Y+Height)
+	if (x>X + relativePos.X && x < X + Width + relativePos.X && y>Y + relativePos.Y && y < Y + Height + relativePos.Y)
 		hit = true;
 	else
     {
@@ -41,11 +43,11 @@ void MyButton::OnMouseMove(int button, int x, int y)
 void MyButton::OnPaint()
 {
     if (pressed)
-    	DrawBitmap(*press, X,Y,Width, Height);	
+		DrawBitmap(*press, X + relativePos.X, Y + relativePos.Y, Width + relativePos.X, Height + relativePos.Y);
 	else if (hit)
-    	DrawBitmap(*hover, X,Y,Width, Height);
+		DrawBitmap(*hover, X + relativePos.X, Y + relativePos.Y, Width + relativePos.X, Height + relativePos.Y);
     else
-        DrawBitmap(*normal, X,Y,Width, Height);
+		DrawBitmap(*normal, X + relativePos.X, Y + relativePos.Y, Width + relativePos.X, Height + relativePos.Y);
     
 }
 

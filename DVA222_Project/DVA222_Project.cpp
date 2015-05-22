@@ -44,7 +44,7 @@ int _tmain(int argc, char** argv)
 	container->Add(button);
 	container->Add(label);
 	container->Add(image);
-	container->Add(checkbox);
+	container->Add(checkBox);
 	container->Add(radiobutton);
 
 

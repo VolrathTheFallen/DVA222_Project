@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "ControlBase.h"
+#include "Graphix.h"
 
 typedef struct _color
 {
@@ -28,11 +29,10 @@ protected:
 	Color color;
 	//string name;
 	//string text;
+	Point relativePos;
 
 	void SetColor(Color c);
 	Color GetColor(void);
-
-	//int relativeX, relativeY;
 
 public:
 

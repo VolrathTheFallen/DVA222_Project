@@ -26,21 +26,23 @@ int _tmain(int argc, char** argv)
     
 	//MyWindow* window = new ...
 
-	//MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
+	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
 
 	//ControlUI* button = new MyButton(10,10,150,60, Color());
 	//ControlUI* image = new MyImageBox(500, 500, 100, 100);
 	//ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
-	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(150, 150, 300, 300, Color(255, 255, 255));
+	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(75, 150, 300, 300, Color(255, 255, 255));
 	checkBoxGroup->Add(new MyCheckBox(10, 10, "CheckBoxTest 1", Color()));
 	checkBoxGroup->Add(new MyCheckBox(10, 30, "CheckBoxTest 2", Color()));
 	MyCheckBox* checkBox = new MyCheckBox(10, 50, "CheckBoxTest 3", Color());
 	checkBoxGroup->Add(checkBox);
 
-	//MyRadioButtonGroup* radioButtonGroup = new...
-	//radioButtonGroup->Add(...
-	//MyRadioButtonGroup* radioButton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150)); // delete this after?
+	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(380, 150, 300, 300, Color(255, 255, 255));
+	radioButtonGroup->Add(new MyRadioButton(10, 10, "RadioButton Test 1", Color()));
+	radioButtonGroup->Add(new MyRadioButton(10, 30, "RadioButton Test 2", Color()));
+	radioButtonGroup->Add(new MyRadioButton(10, 50, "RadioButton Test 3", Color()));
+	radioButtonGroup->Add(new MyRadioButton(10, 70, "RadioButton Test 4", Color()));
 
 	/*container->Add(button);
 	container->Add(image);
@@ -48,8 +50,10 @@ int _tmain(int argc, char** argv)
 	container->Add(checkBoxGroup);*/
 //	container->Add(radioButton);
 
+	container->Add(checkBoxGroup);
+	container->Add(radioButtonGroup);
 
-	InitOGL(argc, argv, (ControlBase*) checkBoxGroup);
+	InitOGL(argc, argv, (ControlBase*)container);
 
     /*delete button;
 	delete label;

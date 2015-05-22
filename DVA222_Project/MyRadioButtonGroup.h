@@ -8,6 +8,7 @@ class MyRadioButtonGroup : public MyContainer
 {
 private:
 	//std::vector<MyRadioButton*> radioButtons;
+	int indexOfSelected;
 
 public:
 
@@ -17,6 +18,7 @@ public:
 	~MyRadioButtonGroup();
 
 	void Add(MyRadioButton* toAdd);
+	void OnMouseDown(int button, int x, int y);
 
 	void OnPaint();
 	//void OnLoaded();

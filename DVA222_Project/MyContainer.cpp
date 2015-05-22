@@ -42,11 +42,13 @@ void MyContainer::OnLoaded()
 
 void MyContainer::OnMouseDown(int button, int x, int y)
 {
-	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
-	{
-		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
-		controls.at(i)->OnMouseDown(button, x, y);
-	}
+	//if (x > X + relativePos.X && x < X + relativePos.X + Width  && y>Y + relativePos.Y && y < Y + relativePos.Y + Height  && button == MOUSE_LEFT) // To avoid unecessary OnMouseDown calls outside container
+	//{
+		for (int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
+		{
+			controls.at(i)->OnMouseDown(button, x, y);
+		}
+	//}
 }
 
 void MyContainer::OnMouseUp(int button, int x, int y)

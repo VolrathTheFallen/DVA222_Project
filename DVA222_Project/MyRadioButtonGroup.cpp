@@ -1,25 +1,23 @@
 #include "stdafx.h"
 #include "MyRadioButtonGroup.h"
 #include "Graphix.h"
+#include "MyCheckBox.h"
+#include "MyRadioButton.h"
 
 MyRadioButtonGroup::MyRadioButtonGroup()
 {
 }
 
 MyRadioButtonGroup::MyRadioButtonGroup(int posX, int posY, int width, int height, Color c)
+	:MyContainer(posX, posY, width, height, c)
 {
-
+	indexOfSelected = -1;
 }
 
 MyRadioButtonGroup::~MyRadioButtonGroup()
 {
 	for (int i = 0; i < controls.size(); i++)
 		delete(controls.at(i));
-}
-
-void MyRadioButtonGroup::Add(MyRadioButton* toAdd)
-{
-	controls.push_back(toAdd);
 }
 
 void MyRadioButtonGroup::OnPaint()
@@ -33,4 +31,39 @@ void MyRadioButtonGroup::OnPaint()
 		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnPaint();
 	}
+}
+
+void MyRadioButtonGroup::Add(MyRadioButton* toAdd)
+{
+	controls.push_back(toAdd);
+}
+
+void MyRadioButtonGroup::OnMouseDown(int button, int x, int y)
+{
+
+	MyRadioButton *tmp;
+	for (int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
+	{
+		tmp = static_cast<MyRadioButton *>(controls.at(i));
+		tmp->SetChecked(false);
+	}
+
+	for (int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
+	{
+		controls.at(i)->OnMouseDown(button, x, y);
+	}
+
+	for (int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
+	{
+		tmp = static_cast<MyRadioButton *>(controls.at(i));
+		if (tmp->GetChecked())
+			indexOfSelected = i;
+
+	}
+
+	if (indexOfSelected == -1)
+		return;
+
+	tmp = static_cast<MyRadioButton *>(controls.at(indexOfSelected));
+	tmp->SetChecked(true);
 }

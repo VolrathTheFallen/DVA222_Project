@@ -31,6 +31,16 @@ void MyRadioButton::OnPaint()
 		//DrawRectangle(X, Y, Width, Height);
 	}
 
+	label->SetRelativePos(this->GetRelativePos());
 	label->OnPaint();
 }
 
+void MyRadioButton::SetChecked(bool b)
+{
+	checked = b;
+}
+
+bool MyRadioButton::GetChecked()
+{
+	return checked;
+}

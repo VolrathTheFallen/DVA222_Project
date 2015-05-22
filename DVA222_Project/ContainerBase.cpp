@@ -1,25 +1,25 @@
 #include "stdafx.h"
-#include "MyContainer.h"
+#include "ContainerBase.h"
 #include "ControlUI.h"
 
-MyContainer::MyContainer()
+ContainerBase::ContainerBase()
 {
 
 }
 
-MyContainer::MyContainer(int posX, int posY, int width, int height, Color c)
+ContainerBase::ContainerBase(int posX, int posY, int width, int height, Color c)
 	:ControlUI(posX, posY, width, height, c)
 {
 
 }
 
-MyContainer::~MyContainer()
+ContainerBase::~ContainerBase()
 {
 	for ( int i = 0; i < controls.size(); i++)
 		delete(controls.at(i));
 }
 
-void MyContainer::OnPaint()
+void ContainerBase::OnPaint()
 {
 	//foreach(ControlBase* controlPointer in controls)	
 	//  	controlPointer->OnPaint();
@@ -31,7 +31,7 @@ void MyContainer::OnPaint()
 	}
 }
 
-void MyContainer::OnLoaded()
+void ContainerBase::OnLoaded()
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnLoaded() for each control in the container 
 	{
@@ -40,7 +40,7 @@ void MyContainer::OnLoaded()
 	}
 }
 
-void MyContainer::OnMouseDown(int button, int x, int y)
+void ContainerBase::OnMouseDown(int button, int x, int y)
 {
 	//if (x > X + relativePos.X && x < X + relativePos.X + Width  && y>Y + relativePos.Y && y < Y + relativePos.Y + Height  && button == MOUSE_LEFT) // To avoid unecessary OnMouseDown calls outside container
 	//{
@@ -51,7 +51,7 @@ void MyContainer::OnMouseDown(int button, int x, int y)
 	//}
 }
 
-void MyContainer::OnMouseUp(int button, int x, int y)
+void ContainerBase::OnMouseUp(int button, int x, int y)
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseUp() for each control in the container 
 	{
@@ -60,7 +60,7 @@ void MyContainer::OnMouseUp(int button, int x, int y)
 	}
 }
 
-void MyContainer::OnMouseMove(int button, int x, int y)
+void ContainerBase::OnMouseMove(int button, int x, int y)
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseMove() for each control in the container 
 	{
@@ -69,7 +69,7 @@ void MyContainer::OnMouseMove(int button, int x, int y)
 	}
 }
 
-void MyContainer::Add(ControlUI* toAdd)
+void ContainerBase::Add(ControlUI* toAdd)
 {
 	controls.push_back(toAdd);
 }

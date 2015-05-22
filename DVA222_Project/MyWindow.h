@@ -1,9 +1,9 @@
 #pragma once
 
 #include "stdafx.h"
-#include "MyContainer.h"
+#include "ContainerBase.h"
 
-class MyWindow : public MyContainer
+class MyWindow : public ContainerBase
 {
 
 };

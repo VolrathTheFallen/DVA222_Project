@@ -7,7 +7,7 @@ MyCheckBoxGroup::MyCheckBoxGroup()
 }
 
 MyCheckBoxGroup::MyCheckBoxGroup(int posX, int posY, int width, int height, Color c)
-	:MyContainer(posX, posY, width, height, c)
+	:ContainerBase(posX, posY, width, height, c)
 {
 
 }

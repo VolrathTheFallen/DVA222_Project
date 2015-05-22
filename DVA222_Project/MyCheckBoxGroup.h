@@ -1,11 +1,11 @@
 #pragma once
 
 #include "stdafx.h"
-#include "MyContainer.h"
+#include "ContainerBase.h"
 #include "MyCheckBox.h"
 #include <vector>
 
-class MyCheckBoxGroup : public MyContainer
+class MyCheckBoxGroup : public ContainerBase
 {
 private:
 	//std::vector<MyCheckBox*> checkBoxes;

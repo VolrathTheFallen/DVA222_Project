@@ -83,7 +83,7 @@
     <ClInclude Include="MyButton.h" />
     <ClInclude Include="MyCheckBox.h" />
     <ClInclude Include="MyCheckBoxGroup.h" />
-    <ClInclude Include="MyContainer.h" />
+    <ClInclude Include="ContainerBase.h" />
     <ClInclude Include="MyImageBox.h" />
     <ClInclude Include="MyLabel.h" />
     <ClInclude Include="MyPanel.h" />
@@ -101,7 +101,7 @@
     <ClCompile Include="MyButton.cpp" />
     <ClCompile Include="MyCheckBox.cpp" />
     <ClCompile Include="MyCheckBoxGroup.cpp" />
-    <ClCompile Include="MyContainer.cpp" />
+    <ClCompile Include="ContainerBase.cpp" />
     <ClCompile Include="MyImageBox.cpp" />
     <ClCompile Include="MyLabel.cpp" />
     <ClCompile Include="MyPanel.cpp" />

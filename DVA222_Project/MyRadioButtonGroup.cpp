@@ -9,7 +9,7 @@ MyRadioButtonGroup::MyRadioButtonGroup()
 }
 
 MyRadioButtonGroup::MyRadioButtonGroup(int posX, int posY, int width, int height, Color c)
-	:MyContainer(posX, posY, width, height, c)
+	:ContainerBase(posX, posY, width, height, c)
 {
 	indexOfSelected = -1;
 }

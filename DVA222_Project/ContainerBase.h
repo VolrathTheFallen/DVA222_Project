@@ -4,7 +4,7 @@
 #include "ControlUI.h"
 #include <vector>
 
-class MyContainer : public ControlUI
+class ContainerBase : public ControlUI
 {
 protected:
 	std::vector<ControlUI*> controls;
@@ -12,10 +12,10 @@ protected:
 
 public:
 
-	MyContainer();
-	MyContainer(int posX, int posY, int width, int height, Color c);
+	ContainerBase();
+	ContainerBase(int posX, int posY, int width, int height, Color c);
 
-	~MyContainer();
+	~ContainerBase();
 
 	void Add(ControlUI* toAdd);
 

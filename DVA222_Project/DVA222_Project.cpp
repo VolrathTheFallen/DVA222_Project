@@ -8,7 +8,7 @@
 #include "MyButton.h"
 #include "MyImageBox.h"
 #include "MyLabel.h"
-#include "MyContainer.h"
+#include "ContainerBase.h"
 #include "MyCheckBoxGroup.h"
 #include "MyRadioButtonGroup.h"
 #include "MyCheckBox.h"
@@ -26,7 +26,7 @@ int _tmain(int argc, char** argv)
     
 	//MyWindow* window = new ...
 
-	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
+	ContainerBase* container = new ContainerBase(10, 10, 700, 500, Color());
 
 	//ControlUI* button = new MyButton(10,10,150,60, Color());
 	//ControlUI* image = new MyImageBox(500, 500, 100, 100);

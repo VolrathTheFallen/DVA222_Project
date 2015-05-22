@@ -44,7 +44,7 @@ void MyContainer::OnMouseDown(int button, int x, int y)
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseDown() for each control in the container 
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnMouseDown(button, x, y);
 	}
 }
@@ -53,7 +53,7 @@ void MyContainer::OnMouseUp(int button, int x, int y)
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseUp() for each control in the container 
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnMouseUp(button, x, y);
 	}
 }
@@ -62,7 +62,7 @@ void MyContainer::OnMouseMove(int button, int x, int y)
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnMouseMove() for each control in the container 
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnMouseMove(button, x, y);
 	}
 }

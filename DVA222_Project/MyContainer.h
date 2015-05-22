@@ -6,7 +6,7 @@
 
 class MyContainer : public ControlUI
 {
-private:
+protected:
 	std::vector<ControlUI*> controls;
 	std::string titel;
 

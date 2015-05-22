@@ -49,7 +49,7 @@ void MyCheckBox::OnPaint()
 	if (checked)
 	{
 		DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
-		FillRectangle(X + 2.5 + relativePos.X, Y + 2.5 + relativePos.Y, Width - 5, Height -5);
+		FillRectangle(X + 2.5 + relativePos.X, Y + 3 + relativePos.Y, Width - 5, Height -5);
 	}
 	else
 	{

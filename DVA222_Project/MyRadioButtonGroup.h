@@ -7,7 +7,7 @@
 class MyRadioButtonGroup : public MyContainer
 {
 private:
-	std::vector<MyRadioButton*> radioButtons;
+	//std::vector<MyRadioButton*> radioButtons;
 
 public:
 

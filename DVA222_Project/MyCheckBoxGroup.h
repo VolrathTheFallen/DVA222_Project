@@ -8,7 +8,7 @@
 class MyCheckBoxGroup : public MyContainer
 {
 private:
-	std::vector<MyCheckBox*> checkBoxes;
+	//std::vector<MyCheckBox*> checkBoxes;
 
 public:
 

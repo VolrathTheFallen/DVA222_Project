@@ -6,7 +6,7 @@
 
 class MyCheckBox : public ControlUI
 {
-private:
+protected:
 	MyLabel* label;
 
 	bool checked;
@@ -19,5 +19,5 @@ public:
 	~MyCheckBox();
 
 	void OnMouseDown(int button, int x, int y);
-	void OnPaint();
+	virtual void OnPaint();
 };

@@ -11,6 +11,7 @@
 #include "MyContainer.h"
 #include "MyCheckBoxGroup.h"
 #include "MyCheckBox.h"
+#include "MyRadioButton.h"
 
 using namespace std;
 
@@ -37,11 +38,14 @@ int _tmain(int argc, char** argv)
 	checkBoxGroup->Add(new MyCheckBox(30, 50, "Testar2", Color()));
 
 
+	MyRadioButton* radiobutton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150));
+
 	container->Add(checkBoxGroup);
 	container->Add(button);
 	container->Add(label);
 	container->Add(image);
-	container->Add(checkBox);
+	container->Add(checkbox);
+	container->Add(radiobutton);
 
 
 	//InitOGL(argc, argv, button);

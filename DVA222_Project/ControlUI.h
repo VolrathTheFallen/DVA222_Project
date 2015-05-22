@@ -32,6 +32,8 @@ protected:
 	void SetColor(Color c);
 	Color GetColor(void);
 
+	//int relativeX, relativeY;
+
 public:
 
 	ControlUI();

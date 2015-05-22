@@ -9,6 +9,7 @@
 #include "MyImageBox.h"
 #include "MyLabel.h"
 #include "MyContainer.h"
+#include "MyCheckBoxGroup.h"
 #include "MyCheckBox.h"
 
 using namespace std;
@@ -29,12 +30,18 @@ int _tmain(int argc, char** argv)
 
 	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
 
-	MyCheckBox* checkbox = new MyCheckBox(200, 100, "Test checkbox", Color());
+	MyCheckBox* checkBox = new MyCheckBox(200, 100, "Test checkbox", Color());
 
+	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(10, 300, 100, 100, Color(255, 255, 255));
+	checkBoxGroup->Add(new MyCheckBox(10,10, "Testar", Color()));
+	checkBoxGroup->Add(new MyCheckBox(30, 50, "Testar2", Color()));
+
+
+	container->Add(checkBoxGroup);
 	container->Add(button);
 	container->Add(label);
 	container->Add(image);
-	container->Add(checkbox);
+	container->Add(checkBox);
 
 
 	//InitOGL(argc, argv, button);
@@ -43,7 +50,7 @@ int _tmain(int argc, char** argv)
 
     delete button;
 	delete label;
-	delete checkbox;
+	delete checkBox;
 	delete container;
 
 	return 0;

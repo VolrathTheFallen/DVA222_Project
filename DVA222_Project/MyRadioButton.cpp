@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MyRadioButton.h"
+#include "Graphix.h"
 
 
 MyRadioButton::MyRadioButton()
@@ -8,7 +9,7 @@ MyRadioButton::MyRadioButton()
 MyRadioButton::MyRadioButton(int posX, int posY, string content, Color color)
 	:MyCheckBox(posX, posY, content, color)
 {
-
+	relativePos = Point(0, 0);
 }
 
 
@@ -21,12 +22,12 @@ void MyRadioButton::OnPaint()
 		//DrawRectangle(X, Y, Width, Height);
 		//FillRectangle(X + 2, Y + 3, Width - 5, Height - 5);
 
-		DrawCircle(X+6, Y+8, Width / 1.5);
-		FillRectangle(X + 2, Y + 6, Width / 2, Height / 2);
+		DrawCircle(X + relativePos.X + 6, Y + relativePos.Y + 8, Width / 1.5);
+		FillRectangle(X + relativePos.X + 2, Y + relativePos.Y + 6, Width / 2, Height / 2);
 	}
 	else
 	{
-		DrawCircle(X+6, Y+8, Width / 1.5);
+		DrawCircle(X + relativePos.X +6, Y + relativePos.Y + 8, Width / 1.5);
 		//DrawRectangle(X, Y, Width, Height);
 	}
 

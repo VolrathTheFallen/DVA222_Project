@@ -12,12 +12,14 @@ MyLabel::MyLabel()
 MyLabel::MyLabel(int posX, int posY, string content)
 	:ControlUI(posX, posY, 0, 0, Color())
 {
+	relativePos = Point(0, 0);
 	text = content;
 }
 
 MyLabel::MyLabel(int posX, int posY, string content, Color c)
 	:ControlUI(posX, posY, 0, 0, c)
 {
+	relativePos = Point(0, 0);
 	text = content;
 }
 
@@ -41,5 +43,5 @@ void MyLabel::DrawLabel()
 	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
 	//Graphix::SetColor(color.R, color.G, color.B);
 
-	DrawString(text, X, Y);
+	DrawString(text, X + relativePos.X, Y + relativePos.Y);
 }

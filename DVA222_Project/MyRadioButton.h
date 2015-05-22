@@ -1,9 +1,13 @@
 #pragma once
 
 #include "stdafx.h"
-#include "ControlUI.h"
+#include "MyCheckBox.h"
 
-class MyRadioButton : ControlUI
+class MyRadioButton : public MyCheckBox
 {
+public:
+	MyRadioButton();
+	MyRadioButton(int posX, int posY, string content, Color color);
 
+	void OnPaint();
 };

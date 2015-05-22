@@ -14,7 +14,8 @@ MyCheckBoxGroup::MyCheckBoxGroup(int posX, int posY, int width, int height, Colo
 
 MyCheckBoxGroup::~MyCheckBoxGroup()
 {
-
+	for ( int i = 0; i < checkBoxes.size(); i++)
+		delete(checkBoxes.at(i));
 }
 
 void MyCheckBoxGroup::OnPaint()
@@ -23,9 +24,9 @@ void MyCheckBoxGroup::OnPaint()
 	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
 	FillRectangle(X + 1, Y + 1, Width -2, Height -2);
 
-	for (signed int i = 0; i < checkBoxes.size(); i++)		//Call OnPaint() for each checkbox in the container
+	for ( int i = 0; i < checkBoxes.size(); i++)		//Call OnPaint() for each checkbox in the container
 	{
-		checkBoxes.at(i)->SetRelativePos(Point(X, Y));
+		checkBoxes.at(i)->SetRelativePos(Point(this->X, this->Y));
 		checkBoxes.at(i)->OnPaint();
 	}
 }

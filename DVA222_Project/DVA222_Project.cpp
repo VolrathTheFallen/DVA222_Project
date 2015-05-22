@@ -41,9 +41,9 @@ int _tmain(int argc, char** argv)
 	MyRadioButton* radiobutton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150));
 
 	container->Add(checkBoxGroup);
-	container->Add(button);
-	container->Add(label);
-	container->Add(image);
+	container->Add((ControlUI*)button);
+	container->Add((ControlUI*)label);
+	container->Add((ControlUI*)image);
 	container->Add(checkBox);
 	container->Add(radiobutton);
 

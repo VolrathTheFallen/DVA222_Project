@@ -10,6 +10,7 @@
 #include "MyLabel.h"
 #include "MyContainer.h"
 #include "MyCheckBoxGroup.h"
+#include "MyRadioButtonGroup.h"
 #include "MyCheckBox.h"
 #include "MyRadioButton.h"
 
@@ -23,38 +24,35 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	ControlBase* button = new MyButton(20,20,190,60, Color());
-
-	ControlBase* image = new MyImageBox(500, 500, 100, 100);
-
-	ControlBase* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
+	//MyWindow* window = new ...
 
 	MyContainer* container = new MyContainer(10, 10, 700, 500, Color());
 
-	MyCheckBox* checkBox = new MyCheckBox(200, 100, "Test checkbox", Color());
+	ControlUI* button = new MyButton(10,10,150,60, Color());
+	ControlUI* image = new MyImageBox(500, 500, 100, 100);
+	ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
 	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(10, 300, 100, 100, Color(255, 255, 255));
-	checkBoxGroup->Add(new MyCheckBox(10,10, "Testar", Color()));
-	checkBoxGroup->Add(new MyCheckBox(30, 50, "Testar2", Color()));
+	checkBoxGroup->Add(new MyCheckBox(10,100, "CheckBoxTest 1", Color()));
+	checkBoxGroup->Add(new MyCheckBox(10, 120, "CheckBoxTest 2", Color()));
+	MyCheckBox* checkBox = new MyCheckBox(10, 140, "CheckBoxTest 3", Color());
+	checkBoxGroup->Add(checkBox);
 
+	//MyRadioButtonGroup* radioButtonGroup = new...
+	//radioButtonGroup->Add(...
+	//MyRadioButtonGroup* radioButton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150)); // delete this after?
 
-	MyRadioButton* radiobutton = new MyRadioButton(200, 200, "Test radiobutton", Color(0, 150, 150));
-
+	container->Add(button);
+	container->Add(image);
+	container->Add(label);
 	container->Add(checkBoxGroup);
-	container->Add((ControlUI*)button);
-	container->Add((ControlUI*)label);
-	container->Add((ControlUI*)image);
-	container->Add(checkBox);
-	container->Add(radiobutton);
+//	container->Add(radioButton);
 
-
-	//InitOGL(argc, argv, button);
 
 	InitOGL(argc, argv, (ControlBase*) container);
 
     delete button;
 	delete label;
-	delete checkBox;
 	delete container;
 
 	return 0;

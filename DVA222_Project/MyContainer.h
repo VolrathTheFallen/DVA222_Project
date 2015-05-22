@@ -19,7 +19,7 @@ public:
 
 	void Add(ControlUI* toAdd);
 
-	void OnPaint();
+	virtual void OnPaint();
 	void OnLoaded();
 	void OnMouseDown(int button, int x, int y);
 	void OnMouseUp(int button, int x, int y);

@@ -30,15 +30,15 @@ void MyCheckBoxGroup::OnPaint()
 	}
 }
 
-void MyCheckBoxGroup::OnLoaded()
-{
-	for (signed int i = 0; i < checkBoxes.size(); i++)		//Call OnLoaded() for each checkbox in the container
-	{
-		checkBoxes.at(i)->SetRelativePos(Point(X, Y));
-		checkBoxes.at(i)->OnLoaded();
-	}
-
-}
+//void MyCheckBoxGroup::OnLoaded()
+//{
+//	for (signed int i = 0; i < checkBoxes.size(); i++)		//Call OnLoaded() for each checkbox in the container
+//	{
+//		checkBoxes.at(i)->SetRelativePos(Point(X, Y));
+//		checkBoxes.at(i)->OnLoaded();
+//	}
+//
+//}
 
 void MyCheckBoxGroup::Add(MyCheckBox* toAdd)
 {

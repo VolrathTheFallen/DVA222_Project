@@ -20,6 +20,6 @@ public:
 	void Add(MyCheckBox* toAdd);
 
 	void OnPaint();
-	void OnLoaded();
+	//void OnLoaded();
 
 };

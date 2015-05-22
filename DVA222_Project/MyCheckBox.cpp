@@ -8,8 +8,8 @@ MyCheckBox::MyCheckBox()
 {
 	X = 10;
 	Y = 10;
-	Width = 16;
-	Height = 16;
+	Width = 12;
+	Height = 12;
 
 	label = new MyLabel();
 
@@ -17,9 +17,9 @@ MyCheckBox::MyCheckBox()
 }
 
 MyCheckBox::MyCheckBox(int posX, int posY, string content, Color c)
-	:ControlUI(posX, posY, 16, 16, c)
+	:ControlUI(posX, posY, 12, 12, c)
 {
-	label = new MyLabel(X, Y, content, c); //posX + width of checkbox and padding. Assuming horizontal orientation
+	label = new MyLabel(X + Width + 3, Y + Height, content, c); //posX + width of checkbox and padding. Assuming horizontal orientation
 
 	checked = false;
 }
@@ -49,7 +49,7 @@ void MyCheckBox::OnPaint()
 	if (checked)
 	{
 		DrawRectangle(X, Y, Width, Height);
-		FillRectangle(X, Y, Width - 5, Height - 5);
+		FillRectangle(X+2, Y+3, Width - 5, Height - 5);
 	}
 	else
 	{

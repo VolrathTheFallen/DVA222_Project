@@ -7,7 +7,7 @@
 class MyContainer : public ControlUI
 {
 private:
-	std::vector<ControlBase*> controls;
+	std::vector<ControlUI*> controls;
 	std::string titel;
 
 public:
@@ -17,7 +17,7 @@ public:
 
 	~MyContainer();
 
-	void Add(ControlBase* toAdd);
+	void Add(ControlUI* toAdd);
 
 	void OnPaint();
 	void OnLoaded();

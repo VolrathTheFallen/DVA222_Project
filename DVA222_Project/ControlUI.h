@@ -36,6 +36,8 @@ protected:
 
 public:
 
+	Point GetRelativePos();
+	void SetRelativePos(Point p);
 	ControlUI();
 	ControlUI(int posX, int posY, int width, int height, Color c);
 };

@@ -24,15 +24,17 @@ void MyCheckBoxGroup::OnPaint()
 	FillRectangle(X + 1, Y + 1, Width -2, Height -2);
 
 	for (signed int i = 0; i < checkBoxes.size(); i++)		//Call OnPaint() for each checkbox in the container
+	{
+		checkBoxes.at(i)->SetRelativePos(Point(X, Y));
 		checkBoxes.at(i)->OnPaint();
+	}
 }
 
 void MyCheckBoxGroup::OnLoaded()
 {
 	for (signed int i = 0; i < checkBoxes.size(); i++)		//Call OnLoaded() for each checkbox in the container
 	{
-		//checkBoxes.at(i)->relativeX = X;
-		//checkBoxes.at(i)->relativeY = X;
+		checkBoxes.at(i)->SetRelativePos(Point(X, Y));
 		checkBoxes.at(i)->OnLoaded();
 	}
 

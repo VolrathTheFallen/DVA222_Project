@@ -18,6 +18,15 @@ ControlUI::ControlUI(int posX, int posY, int width, int height, Color c)
 	relativePos = Point(0, 0);
 }
 
+Point ControlUI::GetRelativePos()
+{
+	return relativePos;
+}
+void ControlUI::SetRelativePos(Point p)
+{
+	relativePos = p;
+}
+
 Color ControlUI::GetColor()
 {
 	return color;

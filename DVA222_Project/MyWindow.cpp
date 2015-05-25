@@ -8,10 +8,11 @@ MyWindow::MyWindow()
 
 }
 
-MyWindow::MyWindow(int posX, int posY, int width, int height, Color c, string titel)
-	:ContainerUI(posX, posY, width, height, c, titel)
+MyWindow::MyWindow(int posX, int posY, int width, int height, Color bgColor, Color borderColor, string titel)
+	:ContainerUI(posX, posY, width, height, bgColor, titel)
 {
 	borderClicked = false;
+	this->borderColor = borderColor;
 }
 
 MyWindow::~MyWindow()
@@ -20,11 +21,20 @@ MyWindow::~MyWindow()
 		delete(controls.at(i));
 }
 
+Color MyWindow::GetBorderColor()
+{
+	return borderColor;
+}
+
+void MyWindow::SetBorderColor(Color bc)
+{
+	borderColor = bc;
+}
+
 void MyWindow::OnPaint()
 {
-	glColor3f(0 / 255.0, 0 / 255.0, 0 / 255.0);
-	FillRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
 	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
+	FillRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
 	FillRectangle(X + relativePos.X + 1, Y + relativePos.Y + 1, Width - 2, Height - 2);
 
 	for (int i = 0; i < controls.size(); i++)		//Call OnPaint() for each control in the window
@@ -33,9 +43,11 @@ void MyWindow::OnPaint()
 		controls.at(i)->OnPaint();
 	}
 
+	glColor3f(borderColor.R / 255.0,  borderColor.G/ 255.0, borderColor.B / 255.0);
+	FillRectangle(X + X + relativePos.X, Y + relativePos.Y, Width, 20);
+	glColor3f(0 / 255.0, 0 / 255.0, 0 / 255.0);
 	DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, 20);
 	DrawString(titel, X + relativePos.X + 5, Y + relativePos.Y + 14);
-
 }
 
 void MyWindow::OnMouseDown(int button, int x, int y)

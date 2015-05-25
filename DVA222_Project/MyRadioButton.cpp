@@ -34,13 +34,3 @@ void MyRadioButton::OnPaint()
 	label->SetRelativePos(this->GetRelativePos());
 	label->OnPaint();
 }
-
-void MyRadioButton::SetChecked(bool b)
-{
-	checked = b;
-}
-
-bool MyRadioButton::GetChecked()
-{
-	return checked;
-}

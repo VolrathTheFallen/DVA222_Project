@@ -33,13 +33,13 @@ int _tmain(int argc, char** argv)
 	ControlUI* label = new MyLabel(10, 20, "label is label spelled backwards", Color());
 	window->Add(label);
 
-	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(10, 40, 300, 150, Color(255, 255, 255), "checkBoxGroup1");
+	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(10, 40, 300, 150, Color(255, 255, 100), "checkBoxGroup1");
 	checkBoxGroup->Add(new MyCheckBox(10, 10, "CheckBoxTest 1", Color()));
 	checkBoxGroup->Add(new MyCheckBox(10, 30, "CheckBoxTest 2", Color()));
 	checkBoxGroup->Add(new MyCheckBox(10, 50, "CheckBoxTest 3", Color()));
 	window->Add((ControlUI*)checkBoxGroup);
 
-	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(320, 40, 300, 150, Color(255, 255, 255), "radioButtonGroup1");
+	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(320, 40, 300, 150, Color(100, 255, 255), "radioButtonGroup1");
 	radioButtonGroup->Add(new MyRadioButton(10, 10, "RadioButton Test 1", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 30, "RadioButton Test 2", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 50, "RadioButton Test 3", Color()));

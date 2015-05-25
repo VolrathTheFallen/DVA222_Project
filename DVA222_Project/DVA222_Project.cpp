@@ -15,6 +15,7 @@
 #include "MyCheckBox.h"
 #include "MyRadioButton.h"
 #include "MyWindow.h"
+#include "MyPanel.h"
 
 
 using namespace std;
@@ -28,41 +29,36 @@ int _tmain(int argc, char** argv)
     //------------------------------------------------------------------------------------------------------------------------------------
     
 	MyWindow* window = new MyWindow(10, 10, 750, 600, Color(255,255,255), "New window");
-
 	ContainerBase* container = new ContainerBase(10, 10, 700, 500, Color());
-
-	//ControlUI* button = new MyButton(10,10,150,60, Color());
-	//ControlUI* image = new MyImageBox(500, 500, 100, 100);
-	//ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
 	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(75, 150, 300, 300, Color(255, 255, 255), "checkBoxGroup1");
 	checkBoxGroup->Add(new MyCheckBox(10, 10, "CheckBoxTest 1", Color()));
 	checkBoxGroup->Add(new MyCheckBox(10, 30, "CheckBoxTest 2", Color()));
-	MyCheckBox* checkBox = new MyCheckBox(10, 50, "CheckBoxTest 3", Color());
-	checkBoxGroup->Add(checkBox);
+	checkBoxGroup->Add(new MyCheckBox(10, 50, "CheckBoxTest 3", Color()));
+	container->Add((ControlUI*)checkBoxGroup);
 
 	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(380, 150, 300, 300, Color(255, 255, 255), "radioButtonGroup1");
 	radioButtonGroup->Add(new MyRadioButton(10, 10, "RadioButton Test 1", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 30, "RadioButton Test 2", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 50, "RadioButton Test 3", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 70, "RadioButton Test 4", Color()));
-
-	/*container->Add(button);
-	container->Add(image);
-	container->Add(label);
-	container->Add(checkBoxGroup);*/
-//	container->Add(radioButton);
-
-	container->Add((ControlUI*)checkBoxGroup);
 	container->Add((ControlUI*)radioButtonGroup);
+
+	ControlUI* button = new MyButton(10, 10, 150, 60, Color());
+	container->Add(button);
+
+	ControlUI* image = new MyImageBox(500, 500, 100, 100);
+	container->Add(image);
+
+	MyPanel* panel = new MyPanel(200, 200, 200, 200, Color(0, 255, 0));
+	ControlUI* label = new MyLabel(10, 10, "Label Test.", Color(255, 255, 255));
+	panel->Add(label);
+	container->Add(panel);
 
 	window->Add(container);
 
 	InitOGL(argc, argv, window);
 
-    /*delete button;
-	delete label;
-	delete container;*/
 
 	return 0;
 }

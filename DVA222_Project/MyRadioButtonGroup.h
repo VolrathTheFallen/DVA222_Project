@@ -1,10 +1,10 @@
 #pragma once
 
 #include "stdafx.h"
-#include "ContainerBase.h"
+#include "ContainerUI.h"
 #include "MyRadioButton.h"
 
-class MyRadioButtonGroup : public ContainerBase
+class MyRadioButtonGroup : public ContainerUI
 {
 private:
 	//std::vector<MyRadioButton*> radioButtons;
@@ -13,7 +13,7 @@ private:
 public:
 
 	MyRadioButtonGroup();
-	MyRadioButtonGroup(int posX, int posY, int width, int height, Color c);
+	MyRadioButtonGroup(int posX, int posY, int width, int height, Color c, string titel);
 
 	~MyRadioButtonGroup();
 

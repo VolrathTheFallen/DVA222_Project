@@ -44,8 +44,8 @@ void MyWindow::OnMouseDown(int button, int x, int y)
 	{
 		if (!borderClicked)
 		{ 
-			relativeToMouseX = x;
-			relativeToMouseY = y;
+			prevX = x;
+			prevY = y;
 		}
 		
 		borderClicked = true;
@@ -61,19 +61,29 @@ void MyWindow::OnMouseUp(int button, int x, int y)
 {
 	borderClicked = false;
 
+
+
 	for (int i = 0; i < controls.size(); i++)		//Call OnMouseUp() for each control in the container 
 	{
 		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnMouseUp(button, x, y);
 	}
+
+	prevX = 0;
+	prevY = 0;
+
+
 }
 
 void MyWindow::OnMouseMove(int button, int x, int y)
 {
 	if (borderClicked)
 	{
-		X = x - relativeToMouseX;
-		Y = y - relativeToMouseY;
+		int deltaX = prevX - x;
+		int deltaY = prevY - y;
+
+		X -= deltaX;
+		Y -= deltaY;
 	}
 
 	for (int i = 0; i < controls.size(); i++)		//Call OnMouseMove() for each control in the container 
@@ -81,4 +91,6 @@ void MyWindow::OnMouseMove(int button, int x, int y)
 		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
 		controls.at(i)->OnMouseMove(button, x, y);
 	}
+	prevX = x;
+	prevY = y;
 }

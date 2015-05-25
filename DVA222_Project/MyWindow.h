@@ -8,8 +8,8 @@ class MyWindow : public ContainerUI
 {
 protected:
 	bool borderClicked;
-	int relativeToMouseX;
-	int relativeToMouseY;
+	int prevX;
+	int prevY;
 
 public:
 	MyWindow();

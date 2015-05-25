@@ -23,18 +23,18 @@ MyWindow::~MyWindow()
 void MyWindow::OnPaint()
 {
 	glColor3f(0 / 255.0, 0 / 255.0, 0 / 255.0);
-	FillRectangle(X, Y, Width, Height);
+	FillRectangle(X + relativePos.X, Y + relativePos.Y, Width, Height);
 	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
-	FillRectangle(X + 1, Y + 1, Width - 2, Height - 2);
+	FillRectangle(X + relativePos.X + 1, Y + relativePos.Y + 1, Width - 2, Height - 2);
 
 	for (int i = 0; i < controls.size(); i++)		//Call OnPaint() for each control in the window
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y + 20));
+		controls.at(i)->SetRelativePos(Point(this->X + relativePos.X, this->Y + relativePos.Y + 20));
 		controls.at(i)->OnPaint();
 	}
 
-	DrawRectangle(X, Y, Width, 20);
-	DrawString(titel, X + 5, Y + 14);
+	DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, 20);
+	DrawString(titel, X + relativePos.X + 5, Y + relativePos.Y + 14);
 
 }
 

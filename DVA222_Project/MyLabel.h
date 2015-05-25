@@ -19,5 +19,5 @@ public:
 	
 	string GetText();
 	void SetText(string s);
-	virtual void OnPaint();
+	void OnPaint();
 };

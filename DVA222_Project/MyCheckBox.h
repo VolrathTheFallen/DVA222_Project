@@ -18,6 +18,9 @@ public:
 
 	~MyCheckBox();
 
+	bool GetChecked();
+	void SetChecked(bool v);
+
 	void OnMouseDown(int button, int x, int y);
 	virtual void OnPaint();
 	

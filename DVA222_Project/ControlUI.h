@@ -27,12 +27,8 @@ class ControlUI : public ControlBase
 {
 protected:
 	Color color;
-	//string name;
-	//string text;
-	Point relativePos;
 
-	void SetColor(Color c);
-	Color GetColor(void);
+	Point relativePos;
 
 	int Z;
 
@@ -43,6 +39,8 @@ public:
 	ControlUI();
 	ControlUI(int posX, int posY, int width, int height, Color c);
 
+	void SetColor(Color c);
+	Color GetColor(void);
 	void SetZ(int z);
 	int GetZ();
 

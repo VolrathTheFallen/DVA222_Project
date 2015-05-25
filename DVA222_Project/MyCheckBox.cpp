@@ -29,6 +29,16 @@ MyCheckBox::~MyCheckBox()
 	delete(label);
 }
 
+bool MyCheckBox::GetChecked()
+{
+	return checked;
+}
+
+void MyCheckBox::SetChecked(bool v)
+{
+	checked = v;
+}
+
 void MyCheckBox::OnMouseDown(int button, int x, int y)
 {
 

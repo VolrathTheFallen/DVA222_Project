@@ -88,7 +88,7 @@ void MyWindow::OnMouseMove(int button, int x, int y)
 
 	for (int i = 0; i < controls.size(); i++)		//Call OnMouseMove() for each control in the container 
 	{
-		//controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		//controls.at(i)->SetRelativePos(Point(this->X, this->Y)); 
 		controls.at(i)->OnMouseMove(button, x, y);
 	}
 	prevX = x;

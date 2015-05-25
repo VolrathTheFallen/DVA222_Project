@@ -43,9 +43,9 @@ void MyWindow::OnPaint()
 		controls.at(i)->OnPaint();
 	}
 
-	glColor3f(borderColor.R / 255.0,  borderColor.G/ 255.0, borderColor.B / 255.0);
-	FillRectangle(X + X + relativePos.X, Y + relativePos.Y, Width, 20);
 	glColor3f(0 / 255.0, 0 / 255.0, 0 / 255.0);
+	FillRectangle(X + relativePos.X, Y + relativePos.Y, Width, 20);
+	glColor3f(borderColor.R / 255.0, borderColor.G / 255.0, borderColor.B / 255.0);
 	DrawRectangle(X + relativePos.X, Y + relativePos.Y, Width, 20);
 	DrawString(titel, X + relativePos.X + 5, Y + relativePos.Y + 14);
 }

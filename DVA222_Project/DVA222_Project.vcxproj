@@ -77,6 +77,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContainerUI.h" />
     <ClInclude Include="ControlUI.h" />
     <ClInclude Include="Graphix.h" />
     <ClInclude Include="ControlBase.h" />

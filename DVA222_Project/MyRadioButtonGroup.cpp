@@ -28,9 +28,12 @@ void MyRadioButtonGroup::OnPaint()
 
 	for (int i = 0; i < controls.size(); i++)		//Call OnPaint() for each radioButton in the container
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		controls.at(i)->SetRelativePos(Point(this->X, this->Y+20));
 		controls.at(i)->OnPaint();
 	}
+
+	DrawString(titel, X + 5, Y + 14);
+
 }
 
 void MyRadioButtonGroup::Add(MyRadioButton* toAdd)

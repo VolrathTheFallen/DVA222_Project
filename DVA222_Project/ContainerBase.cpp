@@ -78,5 +78,5 @@ void ContainerBase::Add(ControlUI* toAdd)
 
 	toAdd->SetZ(counter);
 
-	std::sort(controls.begin(), controls.end(), ContainerUI::CompareZ); //Sorts vector according to element's Z-values
+	std::sort(controls.begin(), controls.end(), ContainerUI::CompareZ); //Sorts vector according to element's Z-values.
 }

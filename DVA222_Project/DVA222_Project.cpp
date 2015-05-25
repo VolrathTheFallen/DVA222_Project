@@ -28,7 +28,7 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	MyWindow* window = new MyWindow(10, 10, 750, 600, Color(255,255,255), "New window");
+	MyWindow* window = new MyWindow(10, 10, 750, 550, Color(255,255,255), "New window");
 
 	ControlUI* label = new MyLabel(10, 20, "label is label spelled backwards", Color());
 	window->Add(label);
@@ -46,18 +46,26 @@ int _tmain(int argc, char** argv)
 	radioButtonGroup->Add(new MyRadioButton(10, 70, "RadioButton Test 4", Color()));
 	window->Add((ControlUI*)radioButtonGroup);
 
-	//ControlUI* button = new MyButton(10, 10, 150, 60, Color());
-	//window->Add(button);
+	MyRadioButton* freeRadioButton = new MyRadioButton(10, 200, "I am a radiobutton and I am free like a bird", Color());
+	window->Add(freeRadioButton);
 
+	MyCheckBox* freeCheckBox = new MyCheckBox(10, 220, "I'm a checkbox and I am free:er than you.", Color());
+	window->Add(freeCheckBox);
 
-
-	ControlUI* image = new MyImageBox(500, 500, 100, 100);
+	ControlUI* image = new MyImageBox(10, 320, 100, 100);
 	window->Add(image);
 
-	MyPanel* panel = new MyPanel(200, 200, 200, 200, Color(0, 255, 0));
-	ControlUI* label2 = new MyLabel(10, 10, "Label Test.", Color(255, 255, 255));
+	MyPanel* panel = new MyPanel(380, 200, 300, 200, Color(0, 255, 0));
+	ControlUI* label2 = new MyLabel(10, 10, "First label test", Color(255, 255, 255));
 	panel->Add(label2);
 	window->Add(panel);
+
+	MyPanel* panel2 = new MyPanel(420, 250, 300, 200, Color(40, 200, 0));
+	ControlUI* label3 = new MyLabel(10, 10, "First label test", Color(255, 255, 255));
+	ControlUI* button = new MyButton(10, 10, 150, 60, Color());
+	panel->Add(label3);
+	panel->Add(button);
+	window->Add(panel2);
 
 	InitOGL(argc, argv, window);
 

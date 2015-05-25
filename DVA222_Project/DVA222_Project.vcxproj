@@ -95,6 +95,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ContainerUI.cpp" />
     <ClCompile Include="ControlUI.cpp" />
     <ClCompile Include="DVA222_Project.cpp" />
     <ClCompile Include="Graphix.cpp" />

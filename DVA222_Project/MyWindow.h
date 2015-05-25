@@ -11,13 +11,13 @@ class MyWindow : public ContainerUI
 
 	~MyWindow();
 
-	void Add(ControlUI* );
+	//void Add(ControlUI* );
 
 	void OnPaint();
-	void OnLoaded();
-
+	//void OnLoaded();
+/*
 	void OnMouseDown(int button, int x, int y);
 	void OnMouseUp(int button, int x, int y);
 	void OnMouseMove(int button, int x, int y);
-
+*/
 };

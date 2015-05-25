@@ -9,10 +9,12 @@
 #include "MyImageBox.h"
 #include "MyLabel.h"
 #include "ContainerBase.h"
+#include "ContainerUI.h"
 #include "MyCheckBoxGroup.h"
 #include "MyRadioButtonGroup.h"
 #include "MyCheckBox.h"
 #include "MyRadioButton.h"
+
 
 using namespace std;
 
@@ -32,13 +34,13 @@ int _tmain(int argc, char** argv)
 	//ControlUI* image = new MyImageBox(500, 500, 100, 100);
 	//ControlUI* label = new MyLabel(400, 300, "Label Test.", Color(255, 0, 0));
 
-	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(75, 150, 300, 300, Color(255, 255, 255));
+	MyCheckBoxGroup* checkBoxGroup = new MyCheckBoxGroup(75, 150, 300, 300, Color(255, 255, 255), "checkBoxGroup1");
 	checkBoxGroup->Add(new MyCheckBox(10, 10, "CheckBoxTest 1", Color()));
 	checkBoxGroup->Add(new MyCheckBox(10, 30, "CheckBoxTest 2", Color()));
 	MyCheckBox* checkBox = new MyCheckBox(10, 50, "CheckBoxTest 3", Color());
 	checkBoxGroup->Add(checkBox);
 
-	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(380, 150, 300, 300, Color(255, 255, 255));
+	MyRadioButtonGroup* radioButtonGroup = new MyRadioButtonGroup(380, 150, 300, 300, Color(255, 255, 255), "radioButtonGroup1");
 	radioButtonGroup->Add(new MyRadioButton(10, 10, "RadioButton Test 1", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 30, "RadioButton Test 2", Color()));
 	radioButtonGroup->Add(new MyRadioButton(10, 50, "RadioButton Test 3", Color()));
@@ -50,8 +52,8 @@ int _tmain(int argc, char** argv)
 	container->Add(checkBoxGroup);*/
 //	container->Add(radioButton);
 
-	container->Add(checkBoxGroup);
-	container->Add(radioButtonGroup);
+	container->Add((ControlUI*)checkBoxGroup);
+	container->Add((ControlUI*)radioButtonGroup);
 
 	InitOGL(argc, argv, (ControlBase*)container);
 

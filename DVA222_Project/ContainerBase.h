@@ -23,4 +23,6 @@ public:
 	virtual void OnMouseDown(int button, int x, int y);
 	void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
+
+	//friend class MyWindow;
 };

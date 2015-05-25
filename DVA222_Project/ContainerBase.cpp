@@ -28,7 +28,7 @@ void ContainerBase::OnPaint()
 
 	for ( int i = 0; i < controls.size(); i++)		//Call OnPaint() for each control in the container 
 	{
-		controls.at(i)->SetRelativePos(Point(this->X,this->Y));
+		controls.at(i)->SetRelativePos(Point(this->X + relativePos.X,this->Y + relativePos.Y));
 		controls.at(i)->OnPaint();
 	}
 }
@@ -37,7 +37,7 @@ void ContainerBase::OnLoaded()
 {
 	for ( int i = 0; i < controls.size(); i++)		//Call OnLoaded() for each control in the container 
 	{
-		controls.at(i)->SetRelativePos(Point(this->X, this->Y));
+		controls.at(i)->SetRelativePos(Point(this->X + relativePos.X, this->Y + relativePos.Y));
 		controls.at(i)->OnLoaded();
 	}
 }

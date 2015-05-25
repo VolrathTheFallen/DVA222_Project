@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "ContainerBase.h"
 #include "ControlUI.h"
+#include <algorithm>
+#include "ContainerUI.h"
 
 ContainerBase::ContainerBase()
 {
@@ -72,4 +74,9 @@ void ContainerBase::OnMouseMove(int button, int x, int y)
 void ContainerBase::Add(ControlUI* toAdd)
 {
 	controls.push_back(toAdd);
+	counter++;
+
+	toAdd->SetZ(counter);
+
+	std::sort(controls.begin(), controls.end(), ContainerUI::CompareZ); //Sorts vector according to element's Z-values.
 }

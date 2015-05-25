@@ -9,6 +9,8 @@ class ContainerBase : public ControlUI
 protected:
 	std::vector<ControlUI*> controls;
 
+	int counter;
+
 public:
 
 	ContainerBase();

@@ -36,3 +36,18 @@ void ControlUI::SetColor(Color c)
 {
 	color = c;
 }
+
+void ControlUI::SetZ(int z)
+{
+	Z = z;
+}
+
+int ControlUI::GetZ()
+{
+	return Z;
+}
+
+bool ControlUI::CompareZ(ControlUI* first, ControlUI* second)
+{
+	return (first->GetZ() < second->GetZ() ? true : false);
+}

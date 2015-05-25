@@ -8,7 +8,6 @@ class ContainerBase : public ControlUI
 {
 protected:
 	std::vector<ControlUI*> controls;
-	std::string titel;
 
 public:
 

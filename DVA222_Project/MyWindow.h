@@ -6,6 +6,7 @@
 
 class MyWindow : public ContainerUI
 {
+public:
 	MyWindow();
 	MyWindow(int posX, int posY, int width, int height, Color c, string titel);
 

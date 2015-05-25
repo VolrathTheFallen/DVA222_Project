@@ -14,6 +14,7 @@
 #include "MyRadioButtonGroup.h"
 #include "MyCheckBox.h"
 #include "MyRadioButton.h"
+#include "MyWindow.h"
 
 
 using namespace std;
@@ -26,7 +27,7 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	//MyWindow* window = new ...
+	MyWindow* window = new MyWindow(10, 10, 750, 500, Color(255,255,255), "New window");
 
 	ContainerBase* container = new ContainerBase(10, 10, 700, 500, Color());
 
@@ -55,7 +56,9 @@ int _tmain(int argc, char** argv)
 	container->Add((ControlUI*)checkBoxGroup);
 	container->Add((ControlUI*)radioButtonGroup);
 
-	InitOGL(argc, argv, (ControlBase*)container);
+	window->Add(container);
+
+	InitOGL(argc, argv, window);
 
     /*delete button;
 	delete label;

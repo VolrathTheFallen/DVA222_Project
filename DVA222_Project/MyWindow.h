@@ -10,15 +10,18 @@ protected:
 	bool borderClicked;
 	int prevX;
 	int prevY;
+	Color borderColor;
 
 public:
 	MyWindow();
-	MyWindow(int posX, int posY, int width, int height, Color c, string titel);
+	MyWindow(int posX, int posY, int width, int height, Color bgColor, Color border,  string titel);
 
 	~MyWindow();
 
 	void OnPaint();
-	//void OnLoaded();
+
+	Color GetBorderColor();
+	void SetBorderColor(Color bc);
 
 	void OnMouseDown(int button, int x, int y);
 	void OnMouseUp(int button, int x, int y);

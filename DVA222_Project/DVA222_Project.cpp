@@ -28,7 +28,7 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	MyWindow* window = new MyWindow(10, 10, 750, 600, Color(255,255,255), "New window");
+	MyWindow* window = new MyWindow(10, 10, 750, 600, Color(255,0,120), "New window");
 
 	ControlUI* label = new MyLabel(10, 20, "label is label spelled backwards", Color());
 	window->Add(label);

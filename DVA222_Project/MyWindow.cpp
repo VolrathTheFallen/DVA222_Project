@@ -36,4 +36,6 @@ void MyWindow::OnPaint()
 	DrawRectangle(X, Y, Width, 20);
 	DrawString(titel, X + 5, Y + 14);
 
+	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
+
 }

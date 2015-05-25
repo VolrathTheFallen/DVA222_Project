@@ -12,7 +12,7 @@ ContainerBase::ContainerBase()
 ContainerBase::ContainerBase(int posX, int posY, int width, int height, Color c)
 	:ControlUI(posX, posY, width, height, c)
 {
-
+	counter = 0;
 }
 
 ContainerBase::~ContainerBase()

@@ -6,19 +6,21 @@
 
 class MyWindow : public ContainerUI
 {
+protected:
+	bool borderClicked;
+	int relativeToMouseX;
+	int relativeToMouseY;
+
 public:
 	MyWindow();
 	MyWindow(int posX, int posY, int width, int height, Color c, string titel);
 
 	~MyWindow();
 
-	//void Add(ControlUI* );
-
 	void OnPaint();
 	//void OnLoaded();
-/*
+
 	void OnMouseDown(int button, int x, int y);
 	void OnMouseUp(int button, int x, int y);
 	void OnMouseMove(int button, int x, int y);
-*/
 };

@@ -34,12 +34,19 @@ protected:
 	void SetColor(Color c);
 	Color GetColor(void);
 
+	int Z;
+
 public:
 
 	Point GetRelativePos();
 	void SetRelativePos(Point p);
 	ControlUI();
 	ControlUI(int posX, int posY, int width, int height, Color c);
+
+	void SetZ(int z);
+	int GetZ();
+
+	static bool CompareZ(ControlUI* first, ControlUI* second);
 };
 
 

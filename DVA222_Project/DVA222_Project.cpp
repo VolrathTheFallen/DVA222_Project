@@ -30,6 +30,8 @@ int _tmain(int argc, char** argv)
 
 	MyWindow* window = new MyWindow(10, 10, 750, 550, Color(230, 230, 230), Color(255, 255, 255), "New window");
 
+
+
 	ControlUI* label = new MyLabel(10, 20, "label is label spelled backwards", Color());
 	window->Add(label);
 
@@ -65,10 +67,12 @@ int _tmain(int argc, char** argv)
 	panel2->Add(label3);
 	panel->Add(button);
 
-
+	
 
 	window->Add(panel2);
 	window->Add(panel);
+
+	window->BringToFront(panel);
 
 	InitOGL(argc, argv, window);
 

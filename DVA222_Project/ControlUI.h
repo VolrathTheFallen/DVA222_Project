@@ -45,6 +45,7 @@ public:
 	int GetZ();
 
 	static bool CompareZ(ControlUI* first, ControlUI* second);
+	static void SwapZ(ControlUI* first, ControlUI* second);
 };
 
 

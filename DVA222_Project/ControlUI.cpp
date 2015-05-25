@@ -51,3 +51,13 @@ bool ControlUI::CompareZ(ControlUI* first, ControlUI* second)
 {
 	return (first->GetZ() < second->GetZ() ? true : false);
 }
+
+
+void ControlUI::SwapZ(ControlUI* first, ControlUI* second)
+{
+	int temp = first->GetZ();
+
+	first->SetZ(second->GetZ());
+
+	second->SetZ(temp);
+}

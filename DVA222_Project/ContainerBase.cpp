@@ -80,3 +80,10 @@ void ContainerBase::Add(ControlUI* toAdd)
 
 	std::sort(controls.begin(), controls.end(), ContainerUI::CompareZ); //Sorts vector according to element's Z-values.
 }
+
+void ContainerBase::BringToFront(ControlUI* toFront)
+{
+	SwapZ(controls.front(), toFront);
+
+	std::sort(controls.begin(), controls.end(), ContainerUI::CompareZ); //Sorts vector according to element's Z-values.
+}

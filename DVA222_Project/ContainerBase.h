@@ -20,6 +20,8 @@ public:
 
 	void Add(ControlUI* toAdd);
 
+	void BringToFront(ControlUI* toFront);
+
 	virtual void OnPaint();
 	void OnLoaded();
 	virtual void OnMouseDown(int button, int x, int y);

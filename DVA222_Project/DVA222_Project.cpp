@@ -27,7 +27,7 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	MyWindow* window = new MyWindow(10, 10, 750, 500, Color(255,255,255), "New window");
+	MyWindow* window = new MyWindow(10, 10, 750, 600, Color(255,255,255), "New window");
 
 	ContainerBase* container = new ContainerBase(10, 10, 700, 500, Color());
 

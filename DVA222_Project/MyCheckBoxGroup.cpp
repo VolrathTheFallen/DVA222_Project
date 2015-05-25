@@ -20,6 +20,7 @@ MyCheckBoxGroup::~MyCheckBoxGroup()
 
 void MyCheckBoxGroup::OnPaint()
 {
+	glColor3f(0 / 255.0, 0 / 255.0, 0 / 255.0);
 	FillRectangle(X, Y, Width, Height);
 	glColor3f(color.R / 255.0, color.G / 255.0, color.B / 255.0);
 	FillRectangle(X + 1, Y + 1, Width -2, Height -2);
